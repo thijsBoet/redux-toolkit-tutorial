@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "redux": "^4.2.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}

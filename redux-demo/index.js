@@ -1,8 +1,12 @@
 const redux = require('redux');
+const reduxLogger = require('redux-logger');
+const logger = reduxLogger.createLogger();
+
 // DO NOT CALL createStore AS A FUNCTION () results in an error
 const createStore = redux.createStore;
 const bindActionCreators = redux.bindActionCreators;
 const combineReducers = redux.combineReducers;
+const applyMiddleware = redux.applyMiddleware;
 
 const CAKE_ORDERED = 'CAKE_ORDERED';
 const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
@@ -10,7 +14,7 @@ const CAKE_RESTOCKED = 'CAKE_RESTOCKED';
 const ICE_CREAM_ORDERED = 'ICE_CREAM_ORDERED';
 const ICE_CREAM_RESTOCKED = 'ICE_CREAM_RESTOCKED';
 
-// ACTION
+// ACTIONS
 // "order one cake"
 function orderCake(qty = 1) {
     return {
@@ -98,12 +102,12 @@ const rootReducer = combineReducers({
 
 // STORE
 // Holds application state
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, applyMiddleware(logger));
 console.log('Initial state: ', store.getState());
 
 // SUBSCRIBE
 // Called when state changes
-const unsubscribe = store.subscribe(() => console.log('Updated state: ', store.getState()));
+const unsubscribe = store.subscribe(() => {});
 
 // DISPATCH
 // Dispatches an action

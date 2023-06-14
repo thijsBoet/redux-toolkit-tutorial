@@ -49,3 +49,6 @@ store.dispatch(orderCake());
 // UNSUBSCRIBE
 // Unsubscribe from store state changes
 unsubscribe();
+
+// UNSUBSCRIBED therefore no state changes
+store.dispatch(orderCake());

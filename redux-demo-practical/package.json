@@ -5,8 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"dev": "npm run start",
-		"start": "nodemon index.js",
-		"startAsync": "nodemon asyncActions.js"
+		"start": "nodemon index.js"
 	},
 	"keywords": [],
 	"author": "",
@@ -15,7 +14,6 @@
 		"axios": "^1.4.0",
 		"immer": "^10.0.2",
 		"redux": "^4.2.1",
-		"redux-logger": "^3.0.6",
 		"redux-thunk": "^2.4.2"
 	},
 	"devDependencies": {
